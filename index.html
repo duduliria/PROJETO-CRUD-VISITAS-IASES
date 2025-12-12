@@ -7,8 +7,8 @@
     <title>Visitas</title>
   </head>
   <body>
-    <h1>Sistema de Registro de Visitates</h1>
-    <h3>Governo Do Estato Do Espirito Santo</h3>
+    <h1>Sistema de Registro de Visitantes</h1>
+    <h3>Governo Do Estado Do Espirito Santo</h3>
     <p id="data-hoje">Registro de Dia</p>
 
     <div class="container">
@@ -52,7 +52,7 @@
           <textarea
             id="destino"
             name="destino"
-            placeholder="Ex: Reunião com equipe de vendas etc...."
+            placeholder="Ex: Reuniao com equipe de vendas etc...."
             required
           ></textarea>
           <button type="submit">Adicionar Novo Registro</button>
@@ -61,11 +61,11 @@
       </section>
 
       <section class="registros-hoje">
-        <h2>Registro de Hoje(<span id="total-registros">0</span>)</h2>
+        <h2>Registro de Hoje (<span id="total-registros">0</span>)</h2>
         <div class="resumo">
-          <div><span id="total">0</span><br />Total %</div>
-          <div><span id="presentes">0</span><br />Presente ✔</div>
-          <div><span id="saiu">0</span><br />Saiu X</div>
+          <div><span id="total">0</span><br />Total</div>
+          <div><span id="presentes">0</span><br />Presente</div>
+          <div><span id="saiu">0</span><br />Saiu</div>
         </div>
         <input
           type="text"
@@ -74,18 +74,10 @@
         />
         <label
           for="filtro-status"
-          style="margin-top: 8px; display: block; font-weight: bold"
+          style="margin-top: 8px; display: block; font-weight: bold; color: #fff"
           >Filtrar por status:</label
         >
-        <select
-          id="filtro-status"
-          style="
-            margin-bottom: 16px;
-            width: 100%;
-            padding: 8px;
-            border-radius: 6px;
-          "
-        >
+        <select id="filtro-status">
           <option value="todos">Todos</option>
           <option value="presente">Presente</option>
           <option value="saiu">Saiu</option>
@@ -94,22 +86,22 @@
       </section>
     </div>
 
-    
-<section id="perguntas">
-  <div class="container perguntas">
-    <div class="perguntas-texto">
-      <h1><span class="texto-destaque">Perguntas</span> Frequentes</h1>
-      <dl></dl>
-    </div>
-  </div>
-</section>
-    
-    <div class="informacoes">
-      <p>Iases 2025</p>
-      <p>Todos os direitos reservado</p>
-    </div>
-  </div>
-  </footer>
+    <section id="perguntas">
+      <div class="container perguntas">
+        <div class="perguntas-texto">
+          <h1><span class="texto-destaque">Tecnologias</span> Utilizadas</h1>
+          <dl></dl>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="informacoes">
+        <p>Iases 2025</p>
+        <p>Todos os direitos reservados</p>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

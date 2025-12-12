@@ -149,7 +149,20 @@ button[type="submit"]:hover {
   border-radius: 6px;
   border: 1px solid rgb(10, 0, 0);
   font-size: 1rem;
+  box-sizing: border-box;
 }
+
+#filtro-status {
+  margin-bottom: 16px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #000;
+  font-size: 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
 #filtros {
   margin-bottom: 16px;
   background: #eee;
@@ -206,6 +219,7 @@ button[type="submit"]:hover {
 }
 .acoes {
   margin-top: 10px;
+  overflow: hidden;
 }
 .registro-card .status {
   display: inline-block;
@@ -218,7 +232,6 @@ button[type="submit"]:hover {
 }
 .registro-card .btn-saida {
   background: #000000;
-  margin-left: 297px;
   border: 1px solid #868686;
   color: #eee;
   border-radius: 6px;
@@ -226,6 +239,7 @@ button[type="submit"]:hover {
   cursor: pointer;
   font-size: 0.95rem;
   transition: background 0.2s;
+  float: right;
 }
 .registro-card .btn-saida:hover {
   background: #797979;
@@ -255,6 +269,15 @@ textarea::placeholder {
     justify-content: center;
     color: #ffffff;
     gap: 48px;
+    padding: 20px 0;
+}
+
+#perguntas {
+    margin-top: 40px;
+}
+
+#perguntas .container {
+    display: block;
 }
 
 
@@ -377,10 +400,10 @@ dt {
 }
 dt::after {
     position: absolute;
-    content: "↷";
+    content: "+";
     color: #9bf00b;
     right: 0;
-    transition: transform 200s ease;
+    transition: transform 0.3s ease;
 }
 dd {
     max-height: 0;

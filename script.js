@@ -2,15 +2,15 @@
 
 
 function dataHojeFormatada() {
-  const dias = ["segunda-feira", "terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado", "Domingo"];
-  const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Agosto", "Setembro","Outubro","Novembro","Dezembro"];
+  const dias = ["Domingo", "Segunda-feira", "Terca-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"];
+  const meses = ["Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
   const hoje = new Date();
-  const diaSemana = dias[hoje.getDay() - 1];
+  const diaSemana = dias[hoje.getDay()];
   const dia = hoje.getDate().toString().padStart(2, "0");
-  const mes = meses[hoje.getMonth() - 1]
+  const mes = meses[hoje.getMonth()];
   const ano = hoje.getFullYear();
 
-  return `${diaSemana}, ${dia} De ${mes} De ${ano}`;
+  return `${diaSemana}, ${dia} de ${mes} de ${ano}`;
 }
 
 
@@ -56,10 +56,10 @@ function rederizarRegistros(filtro = "") {
 
   if (filtroStatus) {
     const valor = filtroStatus.value;
-    if (valor === "Presente") {
-      filtrados = filtrados((r) => !r.saida);
-    } else if (valor === "Saiu") {
-      filtrados = filtrados.filter((r) => r.saida);
+    if (valor === "presente") {
+      filtrados = filtrados.filter((r) => !r.horario_saida && r.status !== "Saiu");
+    } else if (valor === "saiu") {
+      filtrados = filtrados.filter((r) => r.horario_saida || r.status === "Saiu");
     }
   }
 
@@ -226,19 +226,17 @@ if (filtroStatus) {
 }
 const perguntas = [
     {
-        pergunta: "Meus jogos anteriores do Xbox vão funcionar no Xbox Series X?",
-        resposta: "Sim. O Xbox Series X e totalmente compativel com milhares de jogos do Xbox One, Xbox 360 e ate do Xbox original. Muitos desses titulos rodam com desempenho aprimorado, tempos de carregamento reduzidos e graficos otimos. Basta inserir o disco fisico ou baixar a versão digital da sua conta Microsoft.",
+        pergunta: "HTML",
+        resposta: "HTML (HyperText Markup Language) e a linguagem de marcacao padrao para criar paginas web. Ela define a estrutura do conteudo, como titulos, paragrafos, imagens, links e formularios. O HTML usa tags para organizar os elementos, por exemplo: <h1> para titulos, <p> para paragrafos e <img> para imagens. E a base de qualquer site e trabalha junto com CSS e JavaScript.",
     },
     {
-        pergunta: "O que esta incluido no Xbox Series X?",
-        resposta: 
-            "Na caixa do Xbox Series X voce encontra o console, um cotrole sem fio, um cabo Html de alta velocidade compativel com 4K, o cabo de energia e manuais de intrução. O console ja vem proto para ser configurado e jogar assim que for ligado, bastando conectar a internet e a sua conta  Xbox.",
-        },
-        {
-         pergunta: "Como sei se minha TV e compativel com 4K?",
-         resposta: "Para saber se sua TV e compativel com 4K, verifique as especificaçõ~es do fabricante ou o manual do produto. Normalmente, as portas HDMI com suporte a 4K são marcadas como 'HDMI 2.0' ou superior. Tambem e possivel acessar as configurações do Xbox Series X, ir ate a seção de video e testar automaticamente a resolução suportada pela TV.",
-        },
-    
+        pergunta: "CSS",
+        resposta: "CSS (Cascading Style Sheets) e a linguagem usada para estilizar paginas HTML. Com ela, voce controla cores, fontes, espacamentos, tamanhos e posicionamento dos elementos. O CSS separa o conteudo (HTML) da apresentacao visual, tornando o codigo mais organizado. Exemplo: para mudar a cor de um texto, usamos 'color: red;'. Tambem permite criar layouts responsivos que se adaptam a diferentes telas.",
+    },
+    {
+        pergunta: "JavaScript",
+        resposta: "JavaScript e a linguagem de programacao que torna as paginas web interativas. Enquanto HTML estrutura e CSS estiliza, o JavaScript adiciona comportamento dinamico: validacao de formularios, animacoes, requisicoes ao servidor e muito mais. Ele roda diretamente no navegador e pode manipular elementos da pagina em tempo real. E essencial para criar aplicacoes web modernas e interativas.",
+    },
 ];
 const listaPerguntas = document.querySelector("dl");
 

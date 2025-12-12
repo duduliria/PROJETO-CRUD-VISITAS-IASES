@@ -49,7 +49,8 @@ app.get("/visitas", (req, res) => {
   SELECT v.id, v.nome, v.documento, e.nome AS empresa, v.horario_entrada, v.horario_saida, v.destino, v.data_visita, v.status
   FROM visita AS v
   LEFT JOIN empresa AS e ON v.empresa_id = e.id
-  ORDER BY v.data_visita DESC, v.horario_entrada DESC
+  WHERE v.data_visita = CURDATE()
+  ORDER BY v.horario_entrada DESC
   `;
   db.query(sql, (err, results) => {
     if (err) {

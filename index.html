@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Visitas</title>
+  </head>
+  <body>
+    <h1>Sistema de Registro de Visitates</h1>
+    <h3>Governo Do Estato Do Espirito Santo</h3>
+    <p id="data-hoje">Registro de Dia</p>
+
+    <div class="container">
+      <section class="novo-registro">
+        <h2>Novo Registro</h2>
+
+        <form id="form-registro">
+          <label for="nome" id="l">Nome Completo *</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite o nome completo do visitante"
+            required
+          />
+
+          <label for="documento" id="l">Documento (CPF ou RG) *</label>
+          <input
+            type="text"
+            id="documento"
+            name="documento"
+            placeholder="CPF: 000.000.000-00 ou RG: 0.000.000"
+            required
+          />
+          <label for="empresa" id="l">Empresa *</label>
+          <input
+            type="text"
+            id="empresa"
+            name="empresa"
+            placeholder="Digite o nome da empresa do visitante"
+            required
+          />
+          <div class="horarios">
+            <div style="width: 100%">
+              <label for="entrada" id="l">Horario de Entrada *</label>
+              <input type="time" id="entrada" name="entrada" required />
+            </div>
+          </div>
+
+          <label for="destino" id="l">Destino / Motivo da Visita *</label>
+          <textarea
+            id="destino"
+            name="destino"
+            placeholder="Ex: Reunião com equipe de vendas etc...."
+            required
+          ></textarea>
+          <button type="submit">Adicionar Novo Registro</button>
+          <p class="obrigatorio">* Campos obrigatorios</p>
+        </form>
+      </section>
+
+      <section class="registros-hoje">
+        <h2>Registro de Hoje(<span id="total-registros">0</span>)</h2>
+        <div class="resumo">
+          <div><span id="total">0</span><br />Total %</div>
+          <div><span id="presentes">0</span><br />Presente ✔</div>
+          <div><span id="saiu">0</span><br />Saiu X</div>
+        </div>
+        <input
+          type="text"
+          id="busca"
+          placeholder="Buscar por nome, documento ou destino..."
+        />
+        <label
+          for="filtro-status"
+          style="margin-top: 8px; display: block; font-weight: bold"
+          >Filtrar por status:</label
+        >
+        <select
+          id="filtro-status"
+          style="
+            margin-bottom: 16px;
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+          "
+        >
+          <option value="todos">Todos</option>
+          <option value="presente">Presente</option>
+          <option value="saiu">Saiu</option>
+        </select>
+        <div id="lista-registros"></div>
+      </section>
+    </div>
+
+    
+<section id="perguntas">
+  <div class="container perguntas">
+    <div class="perguntas-texto">
+      <h1><span class="texto-destaque">Perguntas</span> Frequentes</h1>
+      <dl></dl>
+    </div>
+  </div>
+</section>
+    
+    <div class="informacoes">
+      <p>Iases 2025</p>
+      <p>Todos os direitos reservado</p>
+    </div>
+  </div>
+  </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
